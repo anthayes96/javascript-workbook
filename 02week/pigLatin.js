@@ -11,6 +11,22 @@ const rl = readline.createInterface({
 function pigLatin(word) {
 
   // Your code here
+  // word[0]
+  // if (word[0] === 'a' || 'i' || 'o' || 'u') {
+  //   return word + 'yay';
+  // }
+ const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+ const firstLetter = word[0];
+
+ if (vowels.includes(firstLetter)) {
+   return word + 'yay';
+ }
+ 
+  
+
+
+
+  
 
 }
 
