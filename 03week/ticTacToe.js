@@ -52,10 +52,45 @@ function horizontalWin() {
 function verticalWin() {
   // Your code here
   // check for an x pattern on the board
+  if (board[0][0] === playerTurn && 
+    board[1][0] === playerTurn && 
+    board[2][0] === playerTurn 
+    ) {
+      return true;
+    } else if (
+    board[0][1] === playerTurn && 
+    board[1][1] === playerTurn && 
+    board[2][1] === playerTurn 
+    ) {
+      return true;
+    } else if (
+      board[0][2] === playerTurn && 
+      board[1][2] === playerTurn && 
+      board[2][2] === playerTurn 
+      ) {
+        return true;
+
+
+}
+  
 }
 
 function diagonalWin() {
   // Your code here
+  if (board[0][0] === playerTurn && 
+    board[1][1] === playerTurn && 
+    board[2][2] === playerTurn 
+    ) {
+      return true;
+    } else if (
+    board[0][2] === playerTurn && 
+    board[1][1] === playerTurn && 
+    board[2][0] === playerTurn 
+    ) {
+      return true;
+
+
+}
 }
 
 function checkForWin() {
@@ -63,6 +98,9 @@ function checkForWin() {
   // check for horizontal, vertical, and diagonal wins
   // return true if any of those checks return true
   //
+  if(playerTurn === 'X') {
+    
+  }
 }
 
 function ticTacToe(row, column) {
@@ -73,11 +111,17 @@ function ticTacToe(row, column) {
 
   // manipulate the playerTurn variable 
   // switch from either X to O or O to X
-  if(playerTurn === 'X') {
-    playerTurn - 'O';
-  } else if (playerTurn === 'O') {
-    playerTurn = 'X'
-  }  
+  // if(playerTurn === 'X') {
+  //   playerTurn - 'O';
+  // } else if (playerTurn === 'O') {
+  //   playerTurn = 'X'
+  // }
+  if (turn) {
+    playerTurn.playerMove();
+  } else {
+    playerTurn.playerMove();
+  }
+  turn = !turn;  
 }
 
 function getPrompt() {
