@@ -29,15 +29,11 @@ function horizontalWin() {
   if (board[0][0] === playerTurn && 
       board[0][1] === playerTurn && 
       board[0][2] === playerTurn 
-      ) {
-        return true;
-      } else if (
+      ||
       board[1][0] === playerTurn && 
       board[1][1] === playerTurn && 
       board[1][2] === playerTurn 
-      ) {
-        return true;
-      } else if (
+      ||
         board[2][0] === playerTurn && 
         board[2][1] === playerTurn && 
         board[2][2] === playerTurn 
@@ -52,26 +48,11 @@ function horizontalWin() {
 function verticalWin() {
   // Your code here
   // check for an x pattern on the board
-  if (board[0][0] === playerTurn && 
-    board[1][0] === playerTurn && 
-    board[2][0] === playerTurn 
-    ) {
-      return true;
-    } else if (
-    board[0][1] === playerTurn && 
-    board[1][1] === playerTurn && 
-    board[2][1] === playerTurn 
-    ) {
-      return true;
-    } else if (
-      board[0][2] === playerTurn && 
-      board[1][2] === playerTurn && 
-      board[2][2] === playerTurn 
-      ) {
+  if (board[0][0] === playerTurn && board[1][0] === playerTurn && board[2][0] === playerTurn ||
+    board[0][1] === playerTurn && board[1][1] === playerTurn && board[2][1] === playerTurn ||
+    board[0][2] === playerTurn && board[1][2] === playerTurn && board[2][2] === playerTurn ) {
         return true;
-
-
-}
+  }
   
 }
 
@@ -80,9 +61,7 @@ function diagonalWin() {
   if (board[0][0] === playerTurn && 
     board[1][1] === playerTurn && 
     board[2][2] === playerTurn 
-    ) {
-      return true;
-    } else if (
+    ||
     board[0][2] === playerTurn && 
     board[1][1] === playerTurn && 
     board[2][0] === playerTurn 
@@ -98,8 +77,17 @@ function checkForWin() {
   // check for horizontal, vertical, and diagonal wins
   // return true if any of those checks return true
   //
-  if(playerTurn === 'X') {
-    
+  if(horizontalWin() || verticalWin() || diagonalWin()) {
+    console.log('player '+ playerTurn + ' wins') ;
+    return true ;  
+  }
+}
+
+function switchPlayer() {
+  if (playerTurn == 'X') {
+    playerTurn = 'O'
+  } else  {
+    playerTurn = 'X'
   }
 }
 
@@ -108,6 +96,8 @@ function ticTacToe(row, column) {
   // manipulate the board array based on the user input (row, column)
   let selectedRow = board[row];
   selectedRow[column] = playerTurn;
+  checkForWin() ;
+  switchPlayer() ; 
 
   // manipulate the playerTurn variable 
   // switch from either X to O or O to X
@@ -116,12 +106,12 @@ function ticTacToe(row, column) {
   // } else if (playerTurn === 'O') {
   //   playerTurn = 'X'
   // }
-  if (turn) {
-    playerTurn.playerMove();
-  } else {
-    playerTurn.playerMove();
-  }
-  turn = !turn;  
+  // if (turn) {
+  //   playerTurn.playerMove();
+  // } else {
+  //   playerTurn.playerMove();
+  // }
+  // turn = !turn;  
 }
 
 function getPrompt() {
