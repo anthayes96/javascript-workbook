@@ -13,6 +13,7 @@ console.log(totalCars)
 // indexOf and lastIndexOf
 // Use the indexOf method to console.log the index of Honda.
 
+
 // Use the lastIndexOf method to console.log the index of Ford.
 
 // join
