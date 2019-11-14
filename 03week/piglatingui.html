@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <html>
+        <h1 id="pop">PigLatin</h1>
+        <input id="text" placeholder="igpay atinlay">
+        <button id="button">Click</button>
+        <div id="returnValue"></div>
+    </html>
+    
+    <script>
+document.getElementById('button').addEventListener('click', getText);
+
+function getText() {
+    let string = document.getElementById('text').value;
+    
+    document.getElementById('returnValue').innerText = (pigLatin(string)) ;
+}
+
+
+function pigLatin(word) {
+  word = word.toLowerCase().trim()
+
+  // Your code here
+  // word[0]
+  // if (word[0] === 'a' || 'i' || 'o' || 'u') {
+  //   return word + 'yay';
+  // }
+ const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+ const firstLetter = word[0];
+let vowelPosition = 0;
+
+ if (vowels.includes(firstLetter)) {
+  return word + 'yay';
+} else {
+  for(let i of word){
+    if (vowels.includes(i)) {
+     //  console.log(word.indexOf(i));
+      vowelPosition = word.indexOf(i);
+      break;
+    }
+  }
+  //we want to remove up to the vowelPosition and return word + vowelPosition + ay
+  return word.slice(vowelPosition) + word.slice(0, vowelPosition) + "ay"
+}
+  
+}
+
+function pigLatin(word) {
+    word = word.toLowerCase().trim()
+    let firstVowel = findFirstVowel(word);
+    if (firstVowel > 0) {
+        return word.slice(firsfirstVowel) + word.slice(0, firstVowel) + "ay" ;
+    } else {
+        return word + 'yay';
+    }
+
+}
+
+function findFirstVowel(word) {
+    for(i = 0; i < word.length; i++) {
+        if ('aeiouy'.indexOf(word[i]) !== -1) {
+         return i;   
+        }
+    }
+}
+
+    </script>
+</body>
+</html>
+
+<!-- 
+if(){
+
+} -->
