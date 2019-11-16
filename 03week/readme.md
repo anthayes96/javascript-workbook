@@ -18,4 +18,4 @@
 
 4. check to see if the game is won (chekforWin function)
  - when all the blocks are stacked into column 2 or 1 return otherwise false
- - nice to have: console log a winning message
+ - nice to have: console log a winning message 
