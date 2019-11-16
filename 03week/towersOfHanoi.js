@@ -26,11 +26,17 @@ function movePiece() {
 
 function isLegal() {
   // Your code here
+  
 
 }
 
 function checkForWin() {
   // Your code here
+  if () {
+  else () {
+
+    }
+  }
 
 }
 
