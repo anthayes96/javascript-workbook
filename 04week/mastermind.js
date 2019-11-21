@@ -62,10 +62,32 @@ function generateHint(guess) {
   return `${redPegs}-${whitePegs}`;
   // return redPegs + '-' + whitePegs;
 }
+function addguesshint(guess) {
+  let hint = generateHint(guess);
+  board.push(hint)
+}
 
 function mastermind(guess) {
-  solution = 'abcd'; // Comment this out to generate a random solution
-  // your code here
+  // solution = 'abcd'; // Comment this out to generate a random solution
+  if (guess.length === 4 && guess !== solution ) {
+    generateHint(guess)
+  
+  }
+  else if(guess === solution) {
+    console.log('You guessed it!')
+    return 'You guessed it!'
+  
+  }
+  if(guess > board.length) {
+    console.log('game over' + solution)
+  }
+  else if(guess.length < 4) {
+    console.log('guess must be 4 letters')
+  }
+  else {
+    addguesshint(guess)
+    console.log('guess again')
+  }
 }
 
 
