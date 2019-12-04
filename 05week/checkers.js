@@ -8,13 +8,21 @@ const rl = readline.createInterface({
 });
 
 
-function Checker() {
+class Checker {
   // Your code here
+  constructor(color) {
+    if(color === 'white') {
+      this.color = string.fromCharCode(0x125CB);
+    } else if (color === 'black') {
+      this.symbol = string.fromCharCode(0x125CF)
+    }
+  }
 }
 
 class Board {
   constructor() {
     this.grid = []
+    this.checkers = [];
   }
   // method that creates an 8x8 array, filled with null values
   createGrid() {
@@ -51,7 +59,15 @@ class Board {
     }
     console.log(string);
   }
+  createCheckers() {
 
+  }
+  selectChecker() {
+
+  }
+  killChecker() {
+
+  }
   // Your code here
 }
 
