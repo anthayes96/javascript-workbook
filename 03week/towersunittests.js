@@ -41,7 +41,7 @@ let endPiece = stacks[endStack][stacks[endStack].length - 1];
 if (startPiece < endPiece || stacks[endStack].length === 0) {
 return true;
 } else {
-console.log("invalid Move");
+console.log("invalid Move Joe");
 return false;
 }
 }
@@ -60,7 +60,7 @@ if (isLegal(startStack, endStack)) {
 movePiece(startStack, endStack);
 }
 if (checkForWin()) {
-console.log("You win");
+console.log("Joe Momma Wins!");
 }
 }
 
