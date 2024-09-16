@@ -9,8 +9,35 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
+  word = word.toLowerCase().trim()
 
   // Your code here
+  // word[0]
+  // if (word[0] === 'a' || 'i' || 'o' || 'u') {
+  //   return word + 'yay';
+  // }
+ const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+ const firstLetter = word[0];
+let vowelPosition = 0;
+
+ if (vowels.includes(firstLetter)) {
+  return word + 'yay';
+} else {
+  for(let i of word){
+    if (vowels.includes(i)) {
+     //  console.log(word.indexOf(i));
+      vowelPosition = word.indexOf(i);
+      break;
+    }
+  }
+  //we want to remove up to the vowelPosition and return word + vowelPosition + ay
+  return word.slice(vowelPosition) + word.slice(0, vowelPosition) + "ay"
+}
+  
+
+
+
+  
 
 }
 
